@@ -5,18 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d284855-8280-4017-93b9-19fea9a67e4e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/geveit/minimal_ioc/ioc/ServiceEntry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/geveit/minimal_ioc/ioc/ServiceRegistry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/geveit/minimal_ioc/ioc/ServiceScope.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/geveit/minimal_ioc/ioc/exceptions/DuplicateRegistryException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/geveit/minimal_ioc/ioc/exceptions/ServiceNotRegisteredException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/geveit/minimal_ioc/ioc/impl/ServiceRegistryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/geveit/minimal_ioc/ioc/ServiceRegistryTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/geveit/minimal_ioc/ioc/ServiceResolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/geveit/minimal_ioc/ioc/exceptions/ResolverException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/geveit/minimal_ioc/ioc/impl/ServiceResolverImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/geveit/minimal_ioc/ioc/ServiceResolverTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/geveit/minimal_ioc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/geveit/minimal_ioc/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/geveit/minimal_ioc/ioc/MinimalIoCImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/geveit/minimal_ioc/ioc/impl/MinimalIoCImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/geveit/minimal_ioc/ioc/exceptions/RegisterNonMatchingTypesException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/geveit/minimal_ioc/ioc/MinimalIoCTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/geveit/minimal_ioc/ioc/MinimalIoCTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,36 +52,23 @@
       <recent name="com.geveit.minimal_ioc.ioc" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ServiceRegistryTests.getNotRegisteredEntryThrowsExcpeption">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.geveit.minimal_ioc.Main" />
+  <component name="RunManager" selected="JUnit.ServiceResolverTests">
+    <configuration name="ServiceResolverTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="minimal_ioc" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.geveit.minimal_ioc.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MinimalIoCTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="minimal_ioc" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.geveit.minimal_ioc.ioc.impl.*" />
+          <option name="PATTERN" value="com.geveit.minimal_ioc.ioc.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.geveit.minimal_ioc.ioc" />
-      <option name="MAIN_CLASS_NAME" value="com.geveit.minimal_ioc.ioc.MinimalIoCTests" />
+      <option name="MAIN_CLASS_NAME" value="com.geveit.minimal_ioc.ioc.ServiceResolverTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServiceRegistryTests.getNotRegisteredEntryThrowsExcpeption" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ServiceResolverTests.resolvingNonRegisteredServiceShoudThrowException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="minimal_ioc" />
       <extension name="coverage">
         <pattern>
@@ -96,14 +77,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.geveit.minimal_ioc.ioc" />
-      <option name="MAIN_CLASS_NAME" value="com.geveit.minimal_ioc.ioc.ServiceRegistryTests" />
-      <option name="METHOD_NAME" value="getNotRegisteredEntryThrowsExcpeption" />
+      <option name="MAIN_CLASS_NAME" value="com.geveit.minimal_ioc.ioc.ServiceResolverTests" />
+      <option name="METHOD_NAME" value="resolvingNonRegisteredServiceShoudThrowException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServiceRegistryTests.registerDuplicateServiceThrowsException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ServiceResolverTests.shouldReturnNestedSingletonServices" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="minimal_ioc" />
       <extension name="coverage">
         <pattern>
@@ -112,14 +93,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.geveit.minimal_ioc.ioc" />
-      <option name="MAIN_CLASS_NAME" value="com.geveit.minimal_ioc.ioc.ServiceRegistryTests" />
-      <option name="METHOD_NAME" value="registerDuplicateServiceThrowsException" />
+      <option name="MAIN_CLASS_NAME" value="com.geveit.minimal_ioc.ioc.ServiceResolverTests" />
+      <option name="METHOD_NAME" value="shouldReturnNestedSingletonServices" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServiceRegistryTests.shouldRegisterCorrectEntry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ServiceResolverTests.singletonTypesShoundAlwaysReturnSameInstance" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="minimal_ioc" />
       <extension name="coverage">
         <pattern>
@@ -128,8 +109,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.geveit.minimal_ioc.ioc" />
-      <option name="MAIN_CLASS_NAME" value="com.geveit.minimal_ioc.ioc.ServiceRegistryTests" />
-      <option name="METHOD_NAME" value="shouldRegisterCorrectEntry" />
+      <option name="MAIN_CLASS_NAME" value="com.geveit.minimal_ioc.ioc.ServiceResolverTests" />
+      <option name="METHOD_NAME" value="singletonTypesShoundAlwaysReturnSameInstance" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceResolverTests.transientTypesShouldAlwaysReturnDifferentInstance" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="minimal_ioc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.geveit.minimal_ioc.ioc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.geveit.minimal_ioc.ioc" />
+      <option name="MAIN_CLASS_NAME" value="com.geveit.minimal_ioc.ioc.ServiceResolverTests" />
+      <option name="METHOD_NAME" value="transientTypesShouldAlwaysReturnDifferentInstance" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -137,11 +134,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ServiceRegistryTests.getNotRegisteredEntryThrowsExcpeption" />
-        <item itemvalue="JUnit.ServiceRegistryTests.registerDuplicateServiceThrowsException" />
-        <item itemvalue="JUnit.ServiceRegistryTests.shouldRegisterCorrectEntry" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.MinimalIoCTests" />
+        <item itemvalue="JUnit.ServiceResolverTests" />
+        <item itemvalue="JUnit.ServiceResolverTests.shouldReturnNestedSingletonServices" />
+        <item itemvalue="JUnit.ServiceResolverTests.singletonTypesShoundAlwaysReturnSameInstance" />
+        <item itemvalue="JUnit.ServiceResolverTests.transientTypesShouldAlwaysReturnDifferentInstance" />
+        <item itemvalue="JUnit.ServiceResolverTests.resolvingNonRegisteredServiceShoudThrowException" />
       </list>
     </recent_temporary>
   </component>
