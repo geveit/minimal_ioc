@@ -1,5 +1,6 @@
 package com.geveit.minimal_ioc.ioc;
 
+import com.geveit.minimal_ioc.ioc.impl.MinimalIoCImpl;
 import com.geveit.minimal_ioc.services.ConsoleWriter;
 import com.geveit.minimal_ioc.services.Greeter;
 import com.geveit.minimal_ioc.services.WorldGreeter;

@@ -1,4 +1,4 @@
-package com.geveit.minimal_ioc.ioc;
+package com.geveit.minimal_ioc.ioc.impl;
 
 import com.geveit.minimal_ioc.ioc.MinimalIoC;
 
