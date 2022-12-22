@@ -2,6 +2,7 @@ package com.geveit.minimal_ioc.ioc.impl;
 
 import com.geveit.minimal_ioc.ioc.ServiceEntry;
 import com.geveit.minimal_ioc.ioc.ServiceRegistry;
+import com.geveit.minimal_ioc.ioc.ServiceScope;
 import com.geveit.minimal_ioc.ioc.exceptions.DuplicateRegistryException;
 import com.geveit.minimal_ioc.ioc.exceptions.ServiceNotRegisteredException;
 
@@ -16,11 +17,12 @@ public class ServiceRegistryImpl implements ServiceRegistry {
     }
 
     @Override
-    public void register(ServiceEntry entry) {
-        if (isTypeRegistered(entry.getType())) {
+    public void register(Class<?> type, Class<?> implType, ServiceScope scope) {
+        if (isTypeRegistered(type)) {
             throw new DuplicateRegistryException();
         }
 
+        ServiceEntry entry = new ServiceEntry(type, implType, scope);
         mappings.put(entry.getType(), entry);
     }
 

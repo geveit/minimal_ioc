@@ -22,24 +22,20 @@ public class ServiceRegistryTests {
 
     @Test
     public void shouldRegisterCorrectEntry() {
-        ServiceEntry entry = new ServiceEntry(Writer.class, ConsoleWriter.class, ServiceScope.TRANSIENT);
-
-        serviceRegistry.register(entry);
+        serviceRegistry.register(Writer.class, ConsoleWriter.class, ServiceScope.TRANSIENT);
 
         ServiceEntry result = serviceRegistry.getEntry(Writer.class);
 
-        assertThat(result.getType(), equalTo(entry.getType()));
-        assertThat(result.getImplType(), equalTo(entry.getImplType()));
-        assertThat(result.getScope(), equalTo(entry.getScope()));
+        assertThat(result.getType(), equalTo(Writer.class));
+        assertThat(result.getImplType(), equalTo(ConsoleWriter.class));
+        assertThat(result.getScope(), equalTo(ServiceScope.TRANSIENT));
     }
 
     @Test
     public void registerDuplicateServiceThrowsException() {
         assertThrows(DuplicateRegistryException.class, () -> {
-            ServiceEntry entry = new ServiceEntry(Writer.class, ConsoleWriter.class, ServiceScope.TRANSIENT);
-            ServiceEntry entry2 = new ServiceEntry(Writer.class, ConsoleWriter.class, ServiceScope.SINGLETON);
-            serviceRegistry.register(entry);
-            serviceRegistry.register(entry2);
+            serviceRegistry.register(Writer.class, ConsoleWriter.class, ServiceScope.TRANSIENT);
+            serviceRegistry.register(Writer.class, ConsoleWriter.class, ServiceScope.SINGLETON);
         });
     }
 

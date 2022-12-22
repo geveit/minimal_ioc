@@ -18,12 +18,12 @@ public class MinimalIoCImpl implements MinimalIoC {
 
     @Override
     public <T, I extends T> void registerTransient(Class<T> type, Class<I> implType) {
-        registry.register(new ServiceEntry(type, implType, ServiceScope.TRANSIENT));
+        registry.register(type, implType, ServiceScope.TRANSIENT);
     }
 
     @Override
     public <T, I extends T> void registerSingleton(Class<T> type, Class<I> implType) {
-        registry.register(new ServiceEntry(type, implType, ServiceScope.SINGLETON));
+        registry.register(type, implType, ServiceScope.SINGLETON);
     }
 
     @Override
