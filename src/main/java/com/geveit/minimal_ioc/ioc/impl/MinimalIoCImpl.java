@@ -1,6 +1,6 @@
 package com.geveit.minimal_ioc.ioc.impl;
 
-import com.geveit.minimal_ioc.ioc.MinimalIoC;
+import com.geveit.minimal_ioc.ioc.*;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -8,41 +8,26 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class MinimalIoCImpl implements MinimalIoC {
-    private final Map<Class<?>, Class<?>> mappings;
+    private final ServiceRegistry registry;
+    private final ServiceResolver resolver;
 
-    public MinimalIoCImpl() {
-        mappings = new HashMap<>();
+    public MinimalIoCImpl(ServiceRegistry registry, ServiceResolver resolver) {
+        this.registry = registry;
+        this.resolver = resolver;
     }
 
     @Override
-    public <T, I extends T> void register(Class<T> type, Class<I> implementationType) {
-        mappings.put(type, implementationType);
+    public <T, I extends T> void registerTransient(Class<T> type, Class<I> implType) {
+        registry.register(new ServiceEntry(type, implType, ServiceScope.TRANSIENT));
+    }
+
+    @Override
+    public <T, I extends T> void registerSingleton(Class<T> type, Class<I> implType) {
+        registry.register(new ServiceEntry(type, implType, ServiceScope.SINGLETON));
     }
 
     @Override
     public <T> T resolve(Class<T> type) {
-        try {
-            Class<?> implementationType = mappings.get(type);
-            return type.cast(instantiate(implementationType));
-        }
-        catch (Exception e) {
-            return null;
-        }
-    }
-
-    private <I> I instantiate(Class<I> type)
-            throws InvocationTargetException, InstantiationException, IllegalAccessException {
-        Constructor<?>[] constructors = type.getConstructors();
-
-        Constructor<?> constructor = constructors[0];
-
-        Class<?>[] parameterTypes = constructor.getParameterTypes();
-
-        List<Object> parameterInstances = new ArrayList<>();
-        for (Class<?> parameterType : parameterTypes) {
-            parameterInstances.add(instantiate(mappings.get(parameterType)));
-        }
-
-        return type.cast(constructor.newInstance(parameterInstances.toArray()));
+        return resolver.resolve(type);
     }
 }
